@@ -1,3 +1,8 @@
+:root {
+    --primary-color: #28a745;
+    --secondary-color: #0284d0;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -6,12 +11,128 @@
 
 body {
     background: #f4f4f4;
+    color: #333;
+    max-width: 1440px;
+}
+
+.container {
+    width: 90%;
+}
+
+/* header and logo */
+.title {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+}
+
+.logo {
+    width: 45px;
+    height: 45px;
+}
+
+/* utilities */
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.txt-hl {
+    color: var(--primary-color);
+}
+
+.top-btn {
+    text-align: center;
 }
 
 .btn {
-    background: #333;
+    width: 275px;
+    height: 77px;
+    text-align: center;
+    background: #fff;
+    color: #333;
+    border: 2px solid var(--primary-color);
+    border-radius: 40px;
+    margin-right: 20px;
+}
+
+/* navbar */
+.navbar ul {
+    height: 65px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background: var(--primary-color);
+}
+
+.navbar ul a:hover {
+    border-bottom: 2px #fff solid;
+}
+
+/* hero sections */
+.hero {
+    width: 740px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.hero .hero-left ul,
+.hero .hero-right ul {
+    margin-top: 10px;
+}
+
+.hero .hero-left ul li {
+    background: var(--secondary-color);
     color: #fff;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    cursor: pointer;
+    width: 300px;
+    height: 75px;
+    margin-bottom: 10px;
+    padding: 0 10px;
+    border-radius: 8px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero .hero-right ul li {
+    background: var(--secondary-color);
+    color: #fff;
+    width: 300px;
+    height: 25px;
+    margin-bottom: 5px;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#spendone {
+    width: 300px;
+}
+
+#spendtwo {
+    width: 250px;
+}
+
+#spendthree {
+    width: 205px;
+}
+
+#spendfour {
+    width: 180px;
+}
+
+#spendfive {
+    width: 170px;
 }
