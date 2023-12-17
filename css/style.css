@@ -362,7 +362,7 @@ a {
     }
 
     .navbar {
-        display: none;
+        display: block;
         position: absolute;
         top: 0;
         left: 0;
@@ -380,10 +380,8 @@ a {
         flex-direction: column;
         width: 150px;
         height: 100%;
+        margin-right: 50px;
     }
-    /* .navbar ul li {
-        padding: 20px;
-    } */
 
     .navbar.show {
         transform: translateX(240px);
