@@ -8,54 +8,100 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div id="menu-btn-el" class="menu-btn">
+        <i class="fa-solid fa-bars fa-2x"></i>
+    </div>
     <div class="container">
         <header class="title">
-            <img src="/images/bulldogLogo.png" alt="english bulldog shawdow" class="logo">
-            <h1><span class="txt-hl">Bailey's</span> Bank</h1>
+            
+            <h1><span class="txt-hl">Bailey's</span>  <img src="/images/bulldogLogo.png" alt="english bulldog shawdow" class="logo"> Bank</h1>
         </header>
 
         <nav class="navbar">
             <ul>
-                <li ><a href="#">Home</a></li>
-                <li ><a href="#">Payments</a></li>
-                <li ><a href="#">Savings</a></li>
-                <li ><a href="#">Financing</a></li>
-                <li ><a href="#">Stock</a></li>
+                <li><a href="#" id="home-nav-el">Home</a></li>
+                    <div id="modal-home-el" class="modalHome">
+                        <div class="modal-home-inner">
+                            <span id="close-home-el" class="close-home"><i class="fa-regular fa-rectangle-xmark fa-2xl bg-main"></i></span>
+                            <p>"Home is not just a place; it's a feeling. It's the warmth of shared moments, the comfort of unconditional love, and the sanctuary where dreams take flight."</p>
+                            <br><br>
+                            <p>Bailey's Bank home will be ready soon</p>
+                        </div>
+                    </div>   
+
+                <li><a href="https://baileysbounty.netlify.app/" target="_blank">Payments</a></li>
+                    
+                <li><a href="#" id="savings-nav-el">Savings</a></li>
+                    <div id="modal-savings-el" class="modalSavings">
+                        <div class="modal-savings-inner">
+                            <span id="close-savings-el" class="close-savings"><i class="fa-regular fa-rectangle-xmark fa-2xl bg-main"></i></span>
+                            <p>"Your savings are not just numbers; they're a testament to your commitment, a shield against uncertainties, and the foundation for your dreams. Embrace the power of saving, for it's the key that unlocks a future of possibilities."</p>
+                            <br><br>
+                            <p>Bailey's Bank savings will be ready soon</p>
+                        </div>
+                    </div> 
+
+                <li><a href="#" id="financing-nav-el">Financing</a></li>
+                    <div id="modal-financing-el" class="modalFinancing">
+                        <div class="modal-financing-inner">
+                            <span id="close-financing-el" class="close-financing"><i class="fa-regular fa-rectangle-xmark fa-2xl bg-main"></i></span>
+                            <p>"Embark on the financing voyage with courage and purpose. Hoist the sails of your dreams, navigate through challenges, and let the winds of financial wisdom propel you towards the horizon of a new and exciting adventure."</p>
+                            <br><br>
+                            <p>Bailey's Bank savings will be ready soon</p>
+                        </div>
+                    </div> 
+                <li><a href="https://finance.yahoo.com/" target="_blank">Stock</a></li>
             </ul>
         </nav>
 
         <main class="top-btn">
-            <button class="btn">Pay <i class="fa-regular fa-credit-card"></i></button>
-            <button class="btn">Transfer <i class="fa-solid fa-money-bill-transfer"></i></button>
+            <button id="pay-btn-el" class="btn">Pay <i class="fa-regular fa-credit-card"></i></button>
+            <button id="transfer-btn-el" class="btn">Transfer <i class="fa-solid fa-money-bill-transfer"></i></button>
         </main>
+
+        <div id="transfer-popup"class="popup">
+            <div class="popup-header">
+                <p id="hidden-message"></p><span id="close-el" class="close"><i class="fa-regular fa-rectangle-xmark fa-2xl bg-main"></i></span>
+            </div>
+            
+            <div class="checkbox">
+                <div class="popup-top">
+                    <label for="account" class="txt-bold">Accounts</label>
+                    <input type="radio" name="transfer" value="Savings" id="savings-el">Savings
+                    <input type="radio" name="transfer" value="Main" id="main-el" >Main
+                </div>
+                
+            </div>
+            <label for="transfer" class="label-title">How much do you want to transfer?</label>
+            <input type="number" id="transfer-amount" class="input-amount" min="0" placeholder="₩">
+            <p id="tranfer-message"></p>
+ 
+            <button type="submit" id="submit-btn-el" class="submit-btn">Submit</button>
+        </div>
 
         <div class="hero">
             <div class="hero-left">
                 <h2>Accounts</h2>
                 <ul>
-                    <li><p>Main Account</p> <p>$6000.59</p></li>
-                    <li><p>Expenses</p> <p>$6000.59</p></li>
-                    <li><p>Savings</p> <p>$6000.59</p></li>
+                    <li id="main-acct-el" onclick="hightlight(changeThis)"></li>
+                    <li id="expenses-acct-el"></li>
+                    <li id="savings-acct-el"></li>
                 </ul>
             </div>
 
             <div class="hero-right">
                 <h2>Spending</h2>
                 <ul>
-                    <li id="spendone"><p>Rent</p> <p>$1400</p></li>
-                    <li id="spendtwo"><p>Groceries</p> <p>$800</p></li>
-                    <li id="spendthree"><p>Restauraunts</p> <p>$300</p></li>
-                    <li id="spendfour"><p>Transportation</p> <p>$125</p></li>
-                    <li id="spendfive"><p>Internet</p> <p>$87</p></li>
+                    <li id="rent-exp-el" class="spendone progress-bar"></li>
+                    <li id="groc-exp-el" class="spendtwo progress-bar"></li>
+                    <li id="rest-exp-el" class="spendthree progress-bar"></li>
+                    <li id="trans-exp-el" class="spendfour progress-bar"></li>
+                    <li id="inter-exp-el" class="spendfive progress-bar"></li>
                 </ul>
             </div>
-
-        </div>
-        
-        
-    </div>
-    
-    
-    <script src="/js/main.js"></script>
+        </div>       
+    </div>    
+    <script src="js/accountData.js" type="module"></script>
+    <script src="js/main.js" type="module"></script>
 </body>
 </html>
