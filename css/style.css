@@ -17,10 +17,13 @@ body {
     color: #333;
     width: 1100px;
     margin: 0 auto;
+    user-select: none;
+    overflow: hidden;
 }
 
 .container {
     width: 90%;
+    overflow-x: hidden;
 }
 
 /* header and logo */
@@ -353,15 +356,13 @@ a {
     }
 
     .logo {
-        position: absolute;
-        top: 50px;
-        right: -180px;
+        width: 30px;
         opacity: 0.2;
         z-index: -1;
     }
 
     .navbar {
-        display: block;
+        display: none;
         position: absolute;
         top: 0;
         left: 0;
@@ -371,7 +372,7 @@ a {
         transform: translateX(-500px);
         transition: transform 0.5s ease-in-out;
         opacity: 0.9;
-        padding: 30px;
+        padding: 10px;
         color: #333;
     }
 
@@ -380,21 +381,22 @@ a {
         width: 150px;
         height: 100%;
     }
-    .navbar ul li {
+    /* .navbar ul li {
         padding: 20px;
-    }
+    } */
 
     .navbar.show {
         transform: translateX(240px);
+        display: block;
     }
 
-    .main-menu li {
-        padding: 10px;
+    .navbar li {
+        /* padding: 10px; */
         border-bottom: 1px #ccc solid;
         font-size: 14px;
     }
 
-    .main-menu li:last-child {
+    .navbar li:last-child {
         border-bottom: none;
     }
     
@@ -416,9 +418,5 @@ a {
     .hero {
         width: 350px;
         grid-template-columns: 1fr;
-    }
-
-    .logo {
-        width: 60px;
     }
 }
