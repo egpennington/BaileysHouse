@@ -74,9 +74,12 @@ submitBtn.addEventListener("click", function(e) {
         console.log("Warning...no amount entered")
         transferMsg.innerText = "Please enter amount"
     } else {
-        console.log("submitted: ₩" + transferAmount.value)
+        const formattedAmount = numberWithCommasKoreanStyle(transferAmount.value)
+        console.log("submitted: ₩" + formattedAmount)
         submitBtn.style.display="none"
-        transferMsg.innerText = "Thank you. You have submitted: ₩" + transferAmount.value
+        transferMsg.innerHTML = `
+                <p><span class="txt-hl txt-bold txt-ital txt-size20">${formattedAmount} 원</span> transfered <i class="fa-solid fa-right-left"></i></p>
+                `
     }
 
 })
@@ -90,14 +93,14 @@ closeX.addEventListener("click", () => {
 const renderAccount = (element, account) => {
     element.innerHTML = `
         <p>${account.title}</p>
-        <p>&#8361;${account.balance}</p>
+        <p>&#8361; ${account.balance}</p>
     `;
 }
 
 const renderExpenses = (element, spending) => {
     element.innerHTML = `
         <p>${spending.category}</p>
-        <p>&#8361;${spending.spent}</p>
+        <p>&#8361; ${spending.spent}</p>
     `
 }
 
@@ -122,3 +125,6 @@ document.getElementById("menu-btn-el").addEventListener("click", function() {
     document.querySelector(".navbar").classList.toggle("show")
 })
 
+function numberWithCommasKoreanStyle(number) {
+    return number.toString().replace(/\B(?=(\d{4})+(?!\d))/g, ",")
+}
