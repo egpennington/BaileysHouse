@@ -1,18 +1,20 @@
 # BaileysBank
- scrimba's mod4 solo project HTML, CSS, JavaScript
+ scrimba's mod4 solo project BEST BANK - HTML, CSS, JavaScript
 
  ## depository
- https://github.com/egpennington/creditCard
+ https://github.com/egpennington/BaileysHouse
 
  ## live site
- https://baileysbounty.netlify.app/
+ https://baileyshouse.netlify.app/
 
 # Scrimba Module 4 Boot Camp Solo Project - Best Bank
 https://scrimba.com/scrim/cocf84a259acc922196ded766
 
-Included in this Bank project in the "Payment" link is my last solo project (Module 3 - Pager Project) based on Frontend Mentor's interactive credit card project. It fit well with the bank theme.
+Included in this Bank project in the "Payment" link is my last solo project (Module 3 - Pager Project) based on Frontend Mentor's interactive credit card project. It fit well with the bank theme. 
+Live site found here ===> https://baileysbounty.netlify.app/
 
-Also included Scrimba's JavaScrimptas challenge Day 8 - Animated Progress Bar. This fit in well with the Expenses balances.
+Also included Scrimba's JavaScrimptas challenge Day 8 - Animated Progress Bar. This fit in well with the Expenses balances. 
+Scrim found here ===> https://scrimba.com/scrim/coba748788cf3667423183a56
 
 
 ## Table of contents
@@ -29,30 +31,36 @@ Also included Scrimba's JavaScrimptas challenge Day 8 - Animated Progress Bar. T
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
 
 Users should be able to:
-
-- Fill in the form and see the card details update in real-time
-- Receive error messages when the form is submitted if:
-  - Any input field is empty
-  - The card number, expiry date, or CVC fields are in the wrong format
-- View the optimal layout depending on their device's screen size
-- See hover, active, and focus states for interactive elements on the page
+- build it from scratch
+- use semantic HTML
+- hover states
+- container
+- group selectors
+- compound selectors
+- follow the design Figma for Module 4 Best Bank found here
+===> https://www.figma.com/file/LjgZKxASJfSRxEITUyVujP/BestBank?node-id=0%3A1&mode=dev
+- stretch goals:
+  - column with spending bars
+  - animated hover effect to button
+  - fetch data from JS
+  - click on account to change view
 
 ### Screenshot
 
-![](/images/screenshot.jpeg)
+![](\images\desktopScreenshot.png)
+![](\images\desktopActiveState1Screenshot.png)
+![](\images\desktopActiveState2Screenshot.png)
 
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://baileysbounty.netlify.app/)
+- Solution URL: (https://github.com/egpennington/BaileysHouse)
+- Live Site URL: (https://baileyshouse.netlify.app/)
 
 ## My process
 
@@ -66,81 +74,95 @@ Users should be able to:
 
 Recap over some of learnings while working through this project.
 
-First, i like the UI/UX design.  The bulldog logo really looks great to me.
+First, i would like to have a better  UI/UX design
 
-Tried to use min and max and required to validate correct input
+Tried to use mobile version, but found there is empty space to the left of the container.  Maybe from the hamburger hidden menu on mobile.  need to fix this big bug.
+
 ```html
 <input type="text" inputmode="numeric" pattern="[0-9]*" id="month-input-el" placeholder="MM" min="1" max="12" minlength="2" maxlength="2" required>
 ```
 
-Made this up to look like the frontend mentor colors...not too bad.
 ```css
 background: linear-gradient(to bottom, var(--very-dark-violet), #3F0EAA, #1E0633);
 ```
 
-used position absolute to place front and back cards.  Must be a better way?
+used position fixed for the display messages.  worked well.
 ```css
-.card-front {
-    position: absolute;
-    top: 100px;
-    left: 60px;
-}
-
-.card-back {
-    position: absolute;
-    top: 330px;
-    left: 100px;
+.modalHome,
+.modalSavings,
+.modalFinancing {
+    display: none;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 450px;
+    width: 350px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px 2px #666;
+    background-color: #212529;
+    color: whitesmoke;
+    opacity: 0.88;
 }
 ```
 
-A lot of @media for small screens. There has to be a better way?
-```css
-    .body {
-        height: 100vh;
-    }
-
-    .mobile {
-        background: url("/images/bg-main-mobile.png") norepeat center center/cover;
-        height: 300px;
-    }
+put mobile css in seperate file because a lot of style changes
+```html
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
 ```
 
-used .trim to take out any white spaces user enters.
+and used a working css to try out and test any changes without changing the original code.  Thought it worked out well. may do this again.
+```html
+    <!-- <link rel="stylesheet" href="css/aigen.css"> -->
+```
+
+researched, copy and pasted and changed js for getting commas in user input.
+needed to have commas at every 4 numbers because Korean won is comma'ed in 1000s
+found this cool code from chatgpt
 ```js
-cardHolderInput.value.trim()
+    function numberWithCommasKoreanStyle(number) {
+        return number.toString().replace(/\B(?=(\d{4})+(?!\d))/g, ",")
+    }
 ```
 
-Relearned setTimeout, like how it displays error msg then disappears.
+it is similar to the one i used in the frontend mentor credit card project
+```js
+    function formatCardNumber(cardNum) {    
+        return cardNum.replace(/(\d{4})(?=\d)/g, '$1 ')
+      }
+
+```
+
+maybe next time i should use this timeout for error message or the "payment not working right now" message instead of alert()
 ```js
         setTimeout(() => {
             messageError.textContent = ""
         }, 2000)
 ```
 
-This was a new snippet for me. Format the numeric card number with spaces every four characters.
-```js
-function formatCardNumber(cardNum) {    
-    return cardNum.replace(/(\d{4})(?=\d)/g, '$1 ')
-  }
-```
 
 ### Continued development
 
-Need to learn how to validate form input like dates; days, months, years, time etc.
+Need to learn how to get rid of the extra space on the left side in mobile version
 
-There has to be a better, more robust way to use CSS to style to make the card faces more adjustable without all the position:absolutes.
+spend more time to get transfer amount to add and subtract from account numbers in arrary
 
 
 ### Useful resources
 
-- [Frontend mentor challenges](https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw/hub) - This helped me for working on SCRIMBA's Module 3, Pager Solo Project. I really liked this real world problem.
+- [Module 4 boot camp project] https://scrimba.com/scrim/cocf84a259acc922196ded766
 - [Scrimba Module 3 Pager Project](https://scrimba.com/scrim/co9b447f7b7a0dc6201d27636) - This is the Module 3 Pager solo project. I liked the bank credit card idea more, and it semmed like the same learnings so adabpted it for this project.
 
 ## Author
 
 - Website - [Emmett Pennington](https://www.COMINGSOON)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/egpennington)
-- Twitter - [@yourusername](https://www.twitter.com/emmettpenn23)
+- discord - [emmettpenn23(애멧)]
+- Frontend Mentor - [@egpennington](https://www.frontendmentor.io/profile/egpennington)
+- Twitter - [@yemmettpenn23](https://www.twitter.com/emmettpenn23)
+- email - [egpennington@hotmail.com]
 
 ## Acknowledgments
 

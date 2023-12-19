@@ -1,7 +1,6 @@
 /* next features: 
  - when click [pay], user choses amt and is subtracted from main.
  - when click [transfer], user can chose to transfer from main and savings.
- - attach Bailey's Credit Card to pay button.
 */
 
 import { accounts } from "./accountData.js"
