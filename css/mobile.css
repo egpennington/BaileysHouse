@@ -84,8 +84,8 @@
     }
 
     .modal {
-        width: auto;
-        font-size: 0.9rem;
+        width: fit-content;
+        font-size: 1vw;
         position: absolute;
         left: -200px;
         top: -200px;
