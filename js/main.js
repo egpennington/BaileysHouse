@@ -45,9 +45,9 @@ financingNav.addEventListener("click", () => {
     modalfinancingEl.style.display="block"
 })
 
-closeHome.addEventListener("click", () => {
-    modalHomeEl.style.display="none"
-})
+// closeHome.addEventListener("click", () => {
+//     modalHomeEl.style.display="none"
+// })
 
 closeSavings.addEventListener("click", () => {
     modalSavingsEl.style.display="none"
@@ -57,9 +57,9 @@ closeFinancing.addEventListener("click", () => {
     modalfinancingEl.style.display="none"
 })
 
-payBtn.addEventListener("click", function() {
-    alert("paying my bills is not working at this time. Please try again later.")
-})
+// payBtn.addEventListener("click", function() {
+//     alert("paying my bills is not working at this time. Please try again later.")
+// })
 
 transferBtn.addEventListener("click", function() {    
     transferPopup.style.display="block"
@@ -77,7 +77,7 @@ submitBtn.addEventListener("click", function(e) {
         console.log("submitted: ₩" + formattedAmount)
         submitBtn.style.display="none"
         transferMsg.innerHTML = `
-                <p><span class="txt-hl txt-bold txt-ital txt-size20">${formattedAmount} 원</span> transfered <i class="fa-solid fa-right-left"></i></p>
+                <p><i class="fa-solid fa-right-left"></i> <span class="txt-hl txt-bold txt-ital txt-size20">${formattedAmount} 원</span> transfered</p>
                 `
     }
 

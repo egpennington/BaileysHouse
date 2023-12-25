@@ -1,3 +1,4 @@
+forked srimba === https://scrimba.com/scrim/co9e84ec2a33413c6dd20dd36# ===
 # BaileysBank
  scrimba's mod4 solo project BEST BANK - HTML, CSS, JavaScript
 
@@ -15,6 +16,9 @@ Live site found here ===> https://baileysbounty.netlify.app/
 
 Also included Scrimba's JavaScrimptas challenge Day 8 - Animated Progress Bar. This fit in well with the Expenses balances. 
 Scrim found here ===> https://scrimba.com/scrim/coba748788cf3667423183a56
+
+From Module 5 start, used the World's most annoying cookie display for my nav message displays
+https://scrimba.com/learn/frontend/position-the-modal-co8934bc1b93006b91994b29d
 
 
 ## Table of contents

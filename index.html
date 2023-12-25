@@ -14,15 +14,20 @@
         <i class="fa-solid fa-bars fa-2x"></i>
     </div>
     <div class="container">
-        <header class="title">
-            
-            <h1><span class="txt-hl">Bailey's</span>  <img src="/images/bulldogLogo.png" alt="english bulldog shawdow" class="logo"> Bank</h1>
+        <header>            
+            <h1 class="title">
+                <a href="/index.html">
+                    <div><span class="txt-hl">Bailey's</span></div>
+                    <div><img src="/images/bulldogLogo.png" alt="english bulldog shawdow" class="logo"></div>
+                    <div>Bank</div>
+                </a>
+            </h1>
         </header>
 
         <nav class="navbar">
             <ul>
-                <li><a href="#" id="home-nav-el">Home</a></li>
-                    <section id="modal-home-el" class="modalHome">
+                <li><a href="/index.html" id="home-nav-el">Home</a></li>
+                    <!-- <section id="modal-home-el" class="modalHome">
                         <div class="modal-home-inner">
                             <span id="close-home-el" class="close-home"><i class="fa-regular fa-rectangle-xmark fa-2xl bg-main"></i></span>
                             
@@ -30,12 +35,12 @@
                             <br>
                             <p>Bailey's Bank home will be ready soon</p>
                         </div>
-                    </section>   
+                    </section>    -->
 
                 <li><a href="https://baileysbounty.netlify.app/" target="_blank">Payments</a></li>
                     
                 <li><a href="#" id="savings-nav-el">Savings</a></li>
-                    <section id="modal-savings-el" class="modalSavings">
+                    <section id="modal-savings-el" class="modalSavings modal">
                         <div class="modal-savings-inner">
                             <span id="close-savings-el" class="close-savings"><i class="fa-regular fa-rectangle-xmark fa-2xl bg-main"></i></span>
                             <p class="txt-mr20">"Your savings are not just numbers; they're a testament to your commitment, a shield against uncertainties, and the foundation for your dreams. Embrace the power of saving, for it's the key that unlocks a future of possibilities."</p>
@@ -45,7 +50,7 @@
                     </section> 
 
                 <li><a href="#" id="financing-nav-el">Financing</a></li>
-                    <section id="modal-financing-el" class="modalFinancing">
+                    <section id="modal-financing-el" class="modalFinancing modal">
                         <div class="modal-financing-inner">
                             <span id="close-financing-el" class="close-financing"><i class="fa-regular fa-rectangle-xmark fa-2xl bg-main"></i></span>
                             <p class="txt-mr20">"Embark on the financing voyage with courage and purpose. Hoist the sails of your dreams, navigate through challenges, and let the winds of financial wisdom propel you towards the horizon of a new and exciting adventure."</p>
@@ -58,7 +63,7 @@
         </nav>
 
         <main class="top-btn">
-            <button id="pay-btn-el" class="btn">Pay <i class="fa-regular fa-credit-card"></i></button>
+            <button id="pay-btn-el" class="btn"><a href="https://baileysbounty.netlify.app/" target="_blank">Pay <i class="fa-regular fa-credit-card"></i></a></button>
             <button id="transfer-btn-el" class="btn">Transfer <i class="fa-solid fa-money-bill-transfer"></i></button>
         </main>
 
