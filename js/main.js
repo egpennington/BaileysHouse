@@ -31,7 +31,6 @@ const modalHomeEl = document.getElementById("modal-home-el")
 const homeMsg = document.getElementById("home-el")
 const modalSavingsEl = document.getElementById("modal-savings-el")
 const modalfinancingEl = document.getElementById("modal-financing-el")
-const menuBtnOpen = document.getElementById("menu-btn-open")
 
 
 homeNav.addEventListener("click", () => {
@@ -46,6 +45,10 @@ financingNav.addEventListener("click", () => {
     modalfinancingEl.style.display="block"
 })
 
+// closeHome.addEventListener("click", () => {
+//     modalHomeEl.style.display="none"
+// })
+
 closeSavings.addEventListener("click", () => {
     modalSavingsEl.style.display="none"
 })
@@ -54,23 +57,30 @@ closeFinancing.addEventListener("click", () => {
     modalfinancingEl.style.display="none"
 })
 
-transferBtn.addEventListener("click", () => {    
+// payBtn.addEventListener("click", function() {
+//     alert("paying my bills is not working at this time. Please try again later.")
+// })
+
+transferBtn.addEventListener("click", function() {    
     transferPopup.style.display="block"
     hiddenMessage.innerText = "Transfer Options"
 })
 
-submitBtn.addEventListener("click", (e) => {
+submitBtn.addEventListener("click", function(e) {
     e.preventDefault()
 
     if (transferAmount.value < 1) {
+        console.log("Warning...no amount entered")
         transferMsg.innerText = "Please enter amount"
     } else {
         const formattedAmount = numberWithCommasKoreanStyle(transferAmount.value)
+        console.log("submitted: ₩" + formattedAmount)
         submitBtn.style.display="none"
         transferMsg.innerHTML = `
                 <p><i class="fa-solid fa-right-left"></i> <span class="txt-hl txt-bold txt-ital txt-size20">${formattedAmount} 원</span> transfered</p>
                 `
     }
+
 })
 
 closeX.addEventListener("click", () => {
@@ -79,19 +89,11 @@ closeX.addEventListener("click", () => {
     submitBtn.style.display="inline-block"
 })
 
-document.querySelector(".menu-btn").addEventListener("click", () => {
-    document.querySelector(".navbar").classList.toggle("show")
-    menuBtnOpen.classList.toggle("hidden")
-
-    // document.querySelector(".menu-btn-open").classList.toggle("hidden")
-    // document.querySelector(".menu-btn-close").classList.toggle("show")
-})
-
 const renderAccount = (element, account) => {
     element.innerHTML = `
         <p>${account.title}</p>
         <p>&#8361; ${account.balance}</p>
-    `
+    `;
 }
 
 const renderExpenses = (element, spending) => {
@@ -117,6 +119,10 @@ function clearMsgAndInput() {
     transferMsg.innerText = " " 
     transferAmount.value = " "
 }
+
+document.getElementById("menu-btn-el").addEventListener("click", function() {
+    document.querySelector(".navbar").classList.toggle("show")
+})
 
 function numberWithCommasKoreanStyle(number) {
     return number.toString().replace(/\B(?=(\d{4})+(?!\d))/g, ",")

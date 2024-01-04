@@ -42,8 +42,10 @@ body {
 }
 
 /* utilities */
-ul { list-style: none; }
-a { 
+ul {
+    list-style: none;
+}
+a {
     text-decoration: none;
     color: #fff;
 }
@@ -51,16 +53,30 @@ h1 a,
 .top-btn a {
     color: #333;
 }
-h1 a:hover { opacity: 0.7; }
-.txt-mr20 { margin-top: 20px; }
-.txt-hl { color: var(--primary-color); }
-.txt-ital { font-style: italic; }
-.txt-bold { font-weight: 700; }
-.txt-size20 { font-size: 20px; }
-.bg-main { color: var(--primary-color); }
-.top-btn { text-align: center; }
-.hidden { display: none; }
-.show { display: block; }
+h1 a:hover {
+    opacity: 0.7;
+}
+.txt-mr20 {
+    margin-top: 20px;
+}
+.txt-hl {
+    color: var(--primary-color);
+}
+.txt-ital {
+    font-style: italic;
+}
+.txt-bold {
+    font-weight: 700;
+}
+.txt-size20 {
+    font-size: 20px;
+}
+.bg-main {
+    color: var(--primary-color);
+}
+.top-btn {
+    text-align: center;
+}
 
 .btn {
     width: 275px;
@@ -103,8 +119,7 @@ h1 a:hover { opacity: 0.7; }
     margin-left: 20px;
 }
 
-.menu-open,
-.menu-close {
+.menu-btn {
     cursor: pointer;
     position: absolute;
     top: 43px;
@@ -139,20 +154,20 @@ h1 a:hover { opacity: 0.7; }
     text-align: center;  
 }
 
-/* main-accounts sections */
-.main-accounts {
+/* hero sections */
+.hero {
     width: 740px;
     margin: 20px auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
-.main-accounts .main-accounts-left ul,
-.main-accounts .main-accounts-right ul {
+.hero .hero-left ul,
+.hero .hero-right ul {
     margin-top: 10px;
 }
 
-.main-accounts .main-accounts-left ul li {
+.hero .hero-left ul li {
     background: var(--secondary-color);
     color: #fff;
     width: 300px;
@@ -165,14 +180,14 @@ h1 a:hover { opacity: 0.7; }
     align-items: center;
 }
 
-.main-accounts .main-accounts-left ul li p {
+.hero .hero-left ul li p {
     justify-content: space-between;
 }
 
-.main-accounts .main-accounts-left ul li:hover,
-.main-accounts .main-accounts-left ul li:active,
-.main-accounts .main-accounts-left ul li:focus,
-.main-accounts .main-accounts-right ul li:hover {
+.hero .hero-left ul li:hover,
+.hero .hero-left ul li:active,
+.hero .hero-left ul li:focus,
+.hero .hero-right ul li:hover {
     font-weight: bold;
     background: #fff;
     color: var(--secondary-color);
@@ -180,7 +195,7 @@ h1 a:hover { opacity: 0.7; }
     box-shadow: 2px 2xp 2xp var(--primary-color);
 }
 
-.main-accounts .main-accounts-right ul li {
+.hero .hero-right ul li {
     background: var(--secondary-color);
     color: #fff;
     width: 300px;

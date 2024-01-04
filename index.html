@@ -10,9 +10,8 @@
     <link rel="stylesheet" href="css/mobile.css">
 </head>
 <body>
-    <div>
-        <i class="fa-solid fa-bars fa-2x menu-btn menu-open" id="menu-btn-open"></i>
-        <i class="fa-solid fa-xmark fa-2x menu-btn menu-close"></i>
+    <div id="menu-btn-el" class="menu-btn">
+        <i class="fa-solid fa-bars fa-2x"></i>
     </div>
     <div class="container">
         <header>            
@@ -28,6 +27,15 @@
         <nav class="navbar">
             <ul>
                 <li><a href="/index.html" id="home-nav-el">Home</a></li>
+                    <!-- <section id="modal-home-el" class="modalHome">
+                        <div class="modal-home-inner">
+                            <span id="close-home-el" class="close-home"><i class="fa-regular fa-rectangle-xmark fa-2xl bg-main"></i></span>
+                            
+                            <p class="txt-mr20">"Home is not just a place; it's a feeling. It's the warmth of shared moments, the comfort of unconditional love, and the sanctuary where dreams take flight."</p>
+                            <br>
+                            <p>Bailey's Bank home will be ready soon</p>
+                        </div>
+                    </section>    -->
 
                 <li><a href="https://baileysbounty.netlify.app/" target="_blank">Payments</a></li>
                     
@@ -54,12 +62,12 @@
             </ul>
         </nav>
 
-        <section class="top-btn">
+        <main class="top-btn">
             <button id="pay-btn-el" class="btn"><a href="https://baileysbounty.netlify.app/" target="_blank">Pay <i class="fa-regular fa-credit-card"></i></a></button>
             <button id="transfer-btn-el" class="btn">Transfer <i class="fa-solid fa-money-bill-transfer"></i></button>
-        </section>
+        </main>
 
-        <section id="transfer-popup"class="popup">
+        <div id="transfer-popup"class="popup">
             <div class="popup-header">
                 <p id="hidden-message"></p><span id="close-el" class="close"><i class="fa-regular fa-rectangle-xmark fa-2xl bg-main"></i></span>
             </div>
@@ -77,10 +85,10 @@
             <p id="tranfer-message"></p>
  
             <button type="submit" id="submit-btn-el" class="submit-btn">Submit</button>
-        </section>
+        </div>
 
-        <section class="main-accounts">
-            <div class="main-accounts-left">
+        <div class="hero">
+            <div class="hero-left">
                 <h2>Accounts</h2>
                 <ul>
                     <li id="main-acct-el" onclick="hightlight(changeThis)"></li>
@@ -89,7 +97,7 @@
                 </ul>
             </div>
 
-            <div class="main-accounts-right">
+            <div class="hero-right">
                 <h2>Spending</h2>
                 <ul>
                     <li id="rent-exp-el" class="spendone progress-bar"></li>
@@ -99,7 +107,7 @@
                     <li id="inter-exp-el" class="spendfive progress-bar"></li>
                 </ul>
             </div>
-        </section>       
+        </div>       
     </div>    
     <script src="js/accountData.js" type="module"></script>
     <script src="js/main.js" type="module"></script>

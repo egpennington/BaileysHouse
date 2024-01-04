@@ -1,19 +1,15 @@
 
 /* media queries */
 @media(max-width: 700px) {
-    body {
-        height: 100vh;
-    }
-
     .container {
         width: 468px;
     }
 
-    .menu-open {
+    .menu-btn {
         display: block;
     }
     
-    .menu-open:hover {
+    .menu-btn:hover {
         opacity: 0.5;
     }
 
@@ -79,7 +75,7 @@
         margin-bottom: 10px;
     }
 
-    .main-accounts {
+    .hero {
         width: 350px;
         grid-template-columns: 1fr;
     }
