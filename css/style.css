@@ -42,10 +42,8 @@ body {
 }
 
 /* utilities */
-ul {
-    list-style: none;
-}
-a {
+ul { list-style: none; }
+a { 
     text-decoration: none;
     color: #fff;
 }
@@ -53,30 +51,16 @@ h1 a,
 .top-btn a {
     color: #333;
 }
-h1 a:hover {
-    opacity: 0.7;
-}
-.txt-mr20 {
-    margin-top: 20px;
-}
-.txt-hl {
-    color: var(--primary-color);
-}
-.txt-ital {
-    font-style: italic;
-}
-.txt-bold {
-    font-weight: 700;
-}
-.txt-size20 {
-    font-size: 20px;
-}
-.bg-main {
-    color: var(--primary-color);
-}
-.top-btn {
-    text-align: center;
-}
+h1 a:hover { opacity: 0.7; }
+.txt-mr20 { margin-top: 20px; }
+.txt-hl { color: var(--primary-color); }
+.txt-ital { font-style: italic; }
+.txt-bold { font-weight: 700; }
+.txt-size20 { font-size: 20px; }
+.bg-main { color: var(--primary-color); }
+.top-btn { text-align: center; }
+.hidden { display: none; }
+.show { display: block; }
 
 .btn {
     width: 275px;
@@ -119,7 +103,8 @@ h1 a:hover {
     margin-left: 20px;
 }
 
-.menu-btn {
+.menu-open,
+.menu-close {
     cursor: pointer;
     position: absolute;
     top: 43px;
@@ -154,20 +139,20 @@ h1 a:hover {
     text-align: center;  
 }
 
-/* hero sections */
-.hero {
+/* main-accounts sections */
+.main-accounts {
     width: 740px;
     margin: 20px auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
-.hero .hero-left ul,
-.hero .hero-right ul {
+.main-accounts .main-accounts-left ul,
+.main-accounts .main-accounts-right ul {
     margin-top: 10px;
 }
 
-.hero .hero-left ul li {
+.main-accounts .main-accounts-left ul li {
     background: var(--secondary-color);
     color: #fff;
     width: 300px;
@@ -180,14 +165,14 @@ h1 a:hover {
     align-items: center;
 }
 
-.hero .hero-left ul li p {
+.main-accounts .main-accounts-left ul li p {
     justify-content: space-between;
 }
 
-.hero .hero-left ul li:hover,
-.hero .hero-left ul li:active,
-.hero .hero-left ul li:focus,
-.hero .hero-right ul li:hover {
+.main-accounts .main-accounts-left ul li:hover,
+.main-accounts .main-accounts-left ul li:active,
+.main-accounts .main-accounts-left ul li:focus,
+.main-accounts .main-accounts-right ul li:hover {
     font-weight: bold;
     background: #fff;
     color: var(--secondary-color);
@@ -195,7 +180,7 @@ h1 a:hover {
     box-shadow: 2px 2xp 2xp var(--primary-color);
 }
 
-.hero .hero-right ul li {
+.main-accounts .main-accounts-right ul li {
     background: var(--secondary-color);
     color: #fff;
     width: 300px;
